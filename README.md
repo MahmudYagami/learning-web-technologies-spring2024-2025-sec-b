@@ -1,1 +1,1 @@
-# teaching-web-technologies-spring2024-2025-sec-b
+# learning-web-technologies-spring2024-2025-sec-b
