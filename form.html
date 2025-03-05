@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+<style>
+    td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+</style>
+<body>
+    <h2>Input Forms</h2>
+    <form action="#" method="post">
+        <table style="border: 1px solid black;">
+            <tr>
+                <td>First Name</td>
+                <td><input type="text" name="firstname"></td>
+            </tr>
+            <tr>
+                <td>Last Name</td>
+                <td><input type="text" name="lastname"></td>
+            </tr>
+            <tr>
+                <td>UserId</td>
+                <td><input type="number" name="number"></td>
+            </tr>
+            <tr>
+                <td>Password</td>
+                <td><input type="password" name="password"></td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td><input type="email" name="email"></td>
+            </tr>
+            <tr>
+                <td>Date of Birth</td>
+                <td><input type="date" name="date"></td>
+            </tr>
+            <tr>
+                <td>Image</td>
+                <td><input type="file" name="image"></td>
+            </tr>
+            <tr>
+                <td>Gender</td>
+                <td>
+                    <input type="radio" name="radio" value="option1"> Male
+                    <input type="radio" name="radio" value="option2"> Female
+                    <input type="radio" name="radio" value="option2"> Others
+                    
+                </td>
+            </tr>
+            <tr>
+                <td>Hobbies</td>
+                <td>
+                    <input type="checkbox" name="checkbox1" value="1"> Coding
+                    <input type="checkbox" name="checkbox2" value="2"> Reading
+                </td>
+            </tr>
+            <tr>
+                <td>Dpartment</td>
+                <td>
+                    <select name="dropdown">
+                        <option value="option1">CSE</option>
+                        <option value="option2">EEE</option>
+                        <option value="option3">BBA</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Address</td>
+                <td><textarea name="textarea" rows="4" cols="30"></textarea></td>
+            </tr>
+            <tr>
+                <td>Buttons</td>
+                <td>
+                    <input type="submit" value="Submit">
+                    <input type="reset" value="Reset">
+                    <button type="button">Button</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
