@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <script>
+        function validateForm() {
+            let username = document.getElementById('username').value;
+            let password = document.getElementById('password').value;
+            let msg = document.getElementById('msg');
+            
+            if (username === "") {
+                msg.innerHTML = "Please enter your UserName!";
+                msg.style.color = 'red';
+                return false;
+            } 
+            
+            if (password === "") {
+                msg.innerHTML = "Please enter your password!";
+                msg.style.color = 'red';
+                return false;
+            }
+            
+            msg.innerHTML = ""; 
+            return true;
+        }
+    </script>
+</head>
+<body>
+
+    <h1>Login</h1>
+    <form action="home.html" method="post" onsubmit="return validateForm()">
+        <table style="border: 1px solid black;">
+            <tr>
+                <td>UserName</td>
+                <td><input type="text" id="username" name="name"></td>
+            </tr>
+            <tr>
+                <td>Password</td>
+                <td><input type="password" id="password" name="password"></td>
+            </tr>
+            <tr>
+                <td>Buttons</td>
+                <td>
+                 <input type="submit" value="Submit">
+                 <a href="frpass.html">Forget Password</a>
+                 <input type="checkbox" name="checkbox1" value="1"> remember me
+                </td>
+            </tr>
+        </table>
+        <p id="msg"></p>
+    </form>
+    
+</body>
+</html>
