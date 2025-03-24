@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Email Form</title>
+</head>
+<body>
+    <form id="emailForm">
+        <h2>Email</h2>
+        <input type="email" id="email" placeholder="Enter your email">
+        <button type="submit">Submit</button>
+        <p id="error" style="color:red;"></p>
+    </form>
+    
+    <script>
+        document.getElementById("emailForm").onsubmit = function(event) {
+            event.preventDefault();
+            let email = document.getElementById("email").value.trim();
+            let error = document.getElementById("error");
+            
+            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                error.textContent = "Enter a valid email address.";
+            } else {
+                error.textContent = "";
+                window.location.href = "gender.html";
+            }
+        };
+    </script>
+</body>
+</html>

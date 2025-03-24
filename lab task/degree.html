@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Degree Page</title>
+</head>
+<body>
+    <h2>Degree</h2>
+    <form id="degreeForm">
+        <input type="checkbox" id="ssc" name="degree" value="ssc">
+        <label for="ssc">SSC</label>
+        <input type="checkbox" id="hsc" name="degree" value="hsc">
+        <label for="hsc">HSC</label>
+        <input type="checkbox" id="bsc" name="degree" value="bsc">
+        <label for="bsc">BSC</label>
+        <br><br>
+        <button type="submit">SUBMIT</button>
+        <p id="error" style="color:red;"></p>
+    </form>
+
+    <script>
+        document.getElementById("degreeForm").onsubmit = function(event) {
+            event.preventDefault();
+            let ssc = document.getElementById("ssc").checked;
+            let hsc = document.getElementById("hsc").checked;
+            let bsc = document.getElementById("bsc").checked;
+            let error = document.getElementById("error");
+
+            if (!ssc && !hsc && !bsc) {
+                error.textContent = "At least one degree must be selected.";
+            } else {
+                error.textContent = "";
+                window.location.href = "bloodgrp.html";
+            }
+        };
+    </script>
+</body>
+</html>

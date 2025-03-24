@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Profile Picture Page</title>
+</head>
+<body>
+    <h2>Profile Picture</h2>
+    <form id="profileForm">
+        <label for="userid">User ID</label><br>
+        <input type="text" id="userid" name="userid" placeholder="Enter User ID"><br><br>
+        <label for="picture">Picture</label><br>
+        <input type="file" id="picture" name="picture"><br><br>
+        <button type="submit">SUBMIT</button>
+        <p id="error" style="color:red;"></p>
+    </form>
+
+    <script>
+        document.getElementById("profileForm").onsubmit = function(event) {
+            event.preventDefault();
+            let userid = document.getElementById("userid").value.trim();
+            let picture = document.getElementById("picture").value;
+            let error = document.getElementById("error");
+
+            if (userid === "") {
+                error.textContent = "User ID cannot be empty.";
+            } else if (picture === "") {
+                error.textContent = "Please select a picture.";
+            } else {
+                error.textContent = "";
+                alert("Profile submitted successfully!");
+            }
+        };
+    </script>
+</body>
+</html>

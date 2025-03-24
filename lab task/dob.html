@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Date of Birth Page</title>
+</head>
+<body>
+    <h2>Date of Birth</h2>
+    <form id="dobForm">
+        <input type="text" id="day" placeholder="dd" size="2" maxlength="2">
+        /
+        <input type="text" id="month" placeholder="mm" size="2" maxlength="2">
+        /
+        <input type="text" id="year" placeholder="yyyy" size="4" maxlength="4">
+        <br><br>
+        <button type="submit">SUBMIT</button>
+        <p id="error" style="color:red;"></p>
+    </form>
+
+    <script>
+        document.getElementById("dobForm").onsubmit = function(event) {
+            event.preventDefault();
+            let day = document.getElementById("day").value.trim();
+            let month = document.getElementById("month").value.trim();
+            let year = document.getElementById("year").value.trim();
+            let error = document.getElementById("error");
+
+            if (day === "" || month === "" || year === "") {
+                error.textContent = "Cannot be empty.";
+                return;
+            }
+            
+            let dayNum = parseInt(day);
+            let monthNum = parseInt(month);
+            let yearNum = parseInt(year);
+
+            if (isNaN(dayNum) || dayNum < 1 || dayNum > 31) {
+                error.textContent = "Day must be between 01 and 31.";
+                return;
+            }
+
+            if (isNaN(monthNum) || monthNum < 1 || monthNum > 12) {
+                error.textContent = "Month must be between 01 and 12.";
+                return;
+            }
+
+            if (isNaN(yearNum) || yearNum < 1900 || yearNum > 2016) {
+                error.textContent = "Year must be between 1900 and 2016.";
+                return;
+            }
+            error.textContent = "";
+            window.location.href = "degree.html";
+        };
+    </script>
+</body>
+</html>
