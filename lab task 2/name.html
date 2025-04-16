@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Name Form</title>
+</head>
+<body>
+    <form id="nameForm">
+        <h1>Name</h1>
+        <input type="text" id="name" placeholder="Enter your name">
+        <button type="submit">Submit</button>
+        <p id="error" style="color:red;"></p>
+    </form>
+    
+    <script>
+        document.getElementById("nameForm").onsubmit = function(event) {
+            event.preventDefault();
+            let name = document.getElementById("name").value.trim();
+            let error = document.getElementById("error");
+            
+            if (!/^[a-zA-Z][a-zA-Z.\-]*\s[a-zA-Z.\-]+$/.test(name)) {
+                error.textContent = "Enter at least two words, starting with a letter.";
+            } else {
+                error.textContent = "";
+                window.location.href = "email.html";
+            }
+        };
+    </script>
+</body>
+</html>
